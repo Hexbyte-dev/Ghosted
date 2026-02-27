@@ -19,8 +19,10 @@ app.get('/health', (req, res) => {
 
 const authRoutes = require('./routes/auth');
 const scanRoutes = require('./routes/scan');
+const ghostRoutes = require('./routes/ghost');
 app.use('/auth', authRoutes);
 app.use('/scan', scanRoutes);
+app.use('/ghost', ghostRoutes);
 
 app.listen(PORT, () => {
   console.log(`Ghosted server running on port ${PORT}`);
