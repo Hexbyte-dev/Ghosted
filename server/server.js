@@ -17,6 +17,9 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'ghosted-server' });
 });
 
+const authRoutes = require('./routes/auth');
+app.use('/auth', authRoutes);
+
 app.listen(PORT, () => {
   console.log(`Ghosted server running on port ${PORT}`);
 });
