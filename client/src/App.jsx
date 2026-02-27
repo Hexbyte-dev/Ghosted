@@ -1,9 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Dashboard from './pages/Dashboard';
+import './App.css';
+
 function App() {
   return (
-    <div className="app">
-      <h1>Ghosted</h1>
-      <p>Ghost your subscriptions.</p>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
